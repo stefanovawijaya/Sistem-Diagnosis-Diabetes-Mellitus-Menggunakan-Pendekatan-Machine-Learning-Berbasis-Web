@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resultnegative</title>
+
+    <style>
+        .centerlogo{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 149px;
+            margin-bottom: 63px;
+            display: block;
+        }
+        div{
+            width: 821px;
+            height: 259px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2.5px solid rgb(86, 154, 217);
+            border-radius: 15px;
+            box-shadow: 0 4px rgb(208, 213, 221);
+        }
+        .margintext1{
+            margin-top: 45px;
+        }
+        .margintext2{
+            margin-top: 12px;
+        }
+        .margintext3{
+            margin-top: 20px;
+        }
+        .margintext4{
+            margin-top: 43px;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button {
+            background-color: rgb(86, 154, 217);
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            width: 203px;
+            height: 48px;
+            margin-top: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+        }
+        .buttonn{
+            background-color: rgb(86, 154, 217);
+            color: white;
+        }
+        .buttonn:hover{
+            background-color: rgb(133, 177, 219);
+            color: #fff;
+            transition-duration: 0.5s;
+        }
+        .link{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='noto_moai.png')}}" alt="logo" height="128px" width="128px" class="centerlogo">
+    </header>
+    <form action="/" method="GET">
+        
+        <div>
+
+            {% if finalData == 1 %}
+
+            <p class="margintext1" style="text-align: center; font-size: 16px; color: rgb(86, 154, 217); font-family: Arial, Helvetica, sans-serif; font-weight: 600">Your result is</p>
+            <p class="margintext2" style="font-size: 36px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-weight: 600">You are diagnosed with diabetes</p>
+            <p class="margintext3" style="text-align: center; font-size: 20px; color:rgb(102, 112, 133); font-family: Arial, Helvetica, sans-serif;">We advise you to check yourself to the nearest hospital</p>
+
+            {% else %}
+
+            <p class="margintext1" style="text-align: center; font-size: 16px; color: rgb(86, 154, 217); font-family: Arial, Helvetica, sans-serif; font-weight: 600">Your result is</p>
+            <p class="margintext2" style="font-size: 36px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-weight: 600">You are not diagnosed with diabetes</p>
+            <p class="margintext3" style="text-align: center; font-size: 20px; color:rgb(102, 112, 133); font-family: Arial, Helvetica, sans-serif;">We advise you to maintain and improve your health</p>
+
+            {% endif %}
+        </div>
+
+        <p class="margintext4" style="text-align: center; font-size: 20px; color:rgb(102, 112, 133); font-family: Arial, Helvetica, sans-serif;">Would you like to take the test again?</p>
+
+        <a href="home.html" class="link"><button class="button buttonn center">Take Test</button></a>
+    </form>
+ <!-- style="position: relative;" -->
+</body>
+</html>
